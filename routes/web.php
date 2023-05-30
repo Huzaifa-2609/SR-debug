@@ -50,3 +50,12 @@ Route::controller(CartController::class)->group(function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    // Shop
+    Route::controller(ShopController::class)->group(function() {
+        Route::post('/shop/create', 'create')->name('shopCreate');
+        Route::get('/shop/detail', 'detail')->name('shopDetail');
+        Route::post('/shop/update', 'update')->name('shopUpdate');
+        Route::post('/shop/update-password', 'updatePassword')->name('shopUpdatePassword');
+    });
+});

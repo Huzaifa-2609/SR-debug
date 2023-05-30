@@ -83,7 +83,7 @@
                         <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Sign Up</button>
                     </form>
                     <div class="text-center mt-5 text-lg">
-                        <p class='text-gray-600'>Already have an account? <a href="/login" class="font-bold">Log
+                        <p class='text-gray-600'>Already have an account? <a href="{{route('login')}}" class="font-bold">Log
                                 in</a>.</p>
                     </div>
                 </div>
