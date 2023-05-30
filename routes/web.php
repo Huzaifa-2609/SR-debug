@@ -40,6 +40,13 @@ Route::controller(ClientController::class)->group(function(){
     Route::get('/about', 'about')->name('clientAbout');
 });
 
+Route::controller(CartController::class)->group(function(){
+    Route::get('/carts', 'carts')->name('clientCarts');
+    Route::post('/add-to-cart', 'addToCart')->name('clientAddToCart');
+    Route::post('/update-cart', 'updateCart')->name('clientUpdateCart');
+    Route::post('/delete-cart', 'deleteCart')->name('clientDeleteCart');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
