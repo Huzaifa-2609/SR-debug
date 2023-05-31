@@ -5,11 +5,11 @@
     </div>
     <x-organisms.products :dataProduct="$recomendationProducts">
     <h1 class="pb-3 mt-2">Recent Popular Product</h1>
-    <x-slot:productCTA>
+    <x-slot name="productCTA">
       <div class="pt-5">
         <x-molecules.button text="More products" align="center" icon="bi-arrow-right" arrow="true" link="{{ route('clientProducts') }}"  />
       </div>
-    </x-slot:productCTA>
+    </x-slot>
   </x-organisms.products>
   <x-organisms.footer :shop="$shop"/>
 </x-template.layout>
