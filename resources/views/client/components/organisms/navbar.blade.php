@@ -8,7 +8,7 @@
         <i class="bi bi-list"></i>
       </div>
     </div>
-    <a href="/" class="nav-logo" id="logo">
+    <a href="{{ route('/') }}" class="nav-logo" id="logo">
       <img src="{{ asset('shop/'.$path) }}" alt="">
     </a>
     <div class="nav-menu" id="nav-menu">
