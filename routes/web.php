@@ -58,4 +58,13 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/shop/update', 'update')->name('shopUpdate');
         Route::post('/shop/update-password', 'updatePassword')->name('shopUpdatePassword');
     });
+
+    // Category
+    Route::controller(CategoryController::class)->group(function() {
+        Route::get('/admin/category', 'index')->name('category');
+        Route::get('/admin/category/create', 'create')->name('categoryCreate');
+        Route::post('/admin/category/check', 'check')->name('categoryCheck');
+        Route::post('/admin/category/save', 'save')->name('categorySave');
+        Route::get('/admin/category/delete/{id}/{path}', 'delete')->name('categoryDelete');
+    });
 });
