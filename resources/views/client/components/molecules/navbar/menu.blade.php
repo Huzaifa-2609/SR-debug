@@ -1,6 +1,6 @@
 <ul class="nav-list">
   <li class="nav-item">
-    <a href="/" class="nav-link">Home</a>
+    <a href="{{ route('/') }}" class="nav-link">Home</a>
   </li>
   <li class="nav-item">
     <a href="{{ route('clientProducts') }}" class="nav-link">Products</a>

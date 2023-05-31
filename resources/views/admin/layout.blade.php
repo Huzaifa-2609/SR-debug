@@ -158,11 +158,10 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>2021 &copy; Mazer</p>
+                        <p>2021 &copy;</p>
                     </div>
                     <div class="float-end">
-                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                                href="http://ahmadsaugi.com">A. Saugi</a></p>
+                        <p>Created <span class="text-danger">by Eye Wear</p>
                     </div>
                 </div>
             </footer>
