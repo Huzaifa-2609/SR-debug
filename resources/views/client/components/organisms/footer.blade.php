@@ -1,4 +1,4 @@
-<div class="sub-footer py-5 mt-5">
+<div class="sub-footer py-5 mt-5" style="background:#b1bfd7ad">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-4 col-12">
@@ -56,6 +56,6 @@
     </div>
   </div>
 
-  <footer>
+  <footer style='background:#b1bfd7ad;margin-top:0'>
     <p>	&#169; {{ now()->year }} {{ $shop->name_shop }}. All rights reserved.</p>
   </footer>

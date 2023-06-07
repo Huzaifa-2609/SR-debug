@@ -1,7 +1,7 @@
 @prepend('css')
 <link rel="stylesheet" href="{{ asset('client/components/organisms/navbar/style.css') }}">
 @endprepend
-<header class="header" id="header">
+<header class="header" id="header" style="background:#b1bfd7ad">
   <nav class="nav container">
     <div class="nav-button">
       <div class="nav-toggle" id="nav-toggle">
