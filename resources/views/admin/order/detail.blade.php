@@ -86,6 +86,38 @@
               </tbody>
             </table>
           </div>
+
+          <!--  -->
+          @if($payment)
+          <div class="mt-5">
+            <h4>Payment Detail</h4>
+            <div class="table-responsive">
+              <table class="table table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <td>No</td>
+                    <td>Method</td>
+                    <td>Amount</td>
+                    <td>Status</td>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>{{$payment->method}}</td>
+                      <td>${{ $payment->amount }}</td>
+                      <td>
+                        <button type="button" style="background-color:transparent;border:none;">
+                          <span class="badge bg-success">{{ $payment->status }}</span>
+                        </button>
+                      </td>
+                      
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          @endif
         </div>
       </div>
     </div>
