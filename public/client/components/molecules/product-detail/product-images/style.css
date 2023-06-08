@@ -9,8 +9,9 @@
 
 .product__carousel .gallery-top {
     border: 1px solid #ebebeb;
-    border-radius: 3px;
+    border-radius: 20px;
     margin-bottom: 5px;
+    background:white
 }
 .product__carousel .gallery-top .swiper-slide {
     position: relative;

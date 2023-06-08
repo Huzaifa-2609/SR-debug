@@ -22,40 +22,56 @@
         </div>
         <div class="col-lg-2 col-md-2 col-6 d-flex flex-column">
           <h6>Contact Us</h6>
-          <p class="d-flex align-items-center"><img src="{{ asset('client/img/icon-phone.png') }}" alt="" class="img-fluid me-2">{{$shop->phone}}</p>
-          <p class="d-flex align-items-center"><img src="{{ asset('client/img/icon-email.png') }}" alt="" class="img-fluid me-2">hello{!! '@'.str_replace(' ', '', strtolower($shop->name_shop)) !!}.com</p>
+          <p class="d-flex align-items-center"><img src="{{ asset('client/img/telephone.png') }}" alt="" class="img-fluid me-2" style="width: 25px;
+    height: 25px;">{{$shop->phone}}</p>
+          <p class="d-flex align-items-center"><img src="{{ asset('client/img/gmail.png') }}" alt="" class="img-fluid me-2" style="width: 25px;
+    height: 25px;">hello{!! '@'.str_replace(' ', '', strtolower($shop->name_shop)) !!}.com</p>
           <div class="d-lg-block d-md-block d-none">
-            <div class="row">
+            <div style="display:flex;align-items:center;gap:10px">
               <div class="col-3">
-                <img src="{{ asset('client/img/icon-instagram.png') }}" alt="" class="img-fluid">
+                <img src="{{ asset('client/img/instagram.png') }}" alt="" class="img-fluid" style="width: 25px;
+    height: 25px;">
               </div>
               <div class="col-3">
-                <img src="{{ asset('client/img/icon-tokopedia.png') }}" alt="" class="img-fluid">
+                <a href="https://www.linkedin.com/company/94871647/admin/?shareMsgArgs=null" target="_blank">
+                <img src="{{ asset('client/img/linkedin.png') }}" alt="" class="img-fluid" style="width: 25px;
+    height: 25px;">
+                </a>
+ 
               </div>
               <div class="col-3">
-                <img src="{{ asset('client/img/icon-facebook.png') }}" alt="" class="img-fluid">
+                <img src="{{ asset('client/img/facebook.png') }}" alt="" class="img-fluid" style="width: 25px;
+    height: 25px;">
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-3 col-6 d-lg-none d-md-none d-block">
           <h6>Social Media</h6>
-          <div class="row">
+          <div style="display:flex;align-items:center;gap:10px">
             <div class="col-3">
-              <img src="{{ asset('client/img/icon-instagram.png') }}" alt="" class="img-fluid">
+              <img src="{{ asset('client/img/instagram.png') }}" alt="" class="img-fluid" style="width: 25px;
+    height: 25px;">
             </div>
             <div class="col-3">
-              <img src="{{ asset('client/img/icon-tokopedia.png') }}" alt="" class="img-fluid">
+            <a href="https://www.linkedin.com/company/94871647/admin/?shareMsgArgs=null" target="_blank">
+                <img src="{{ asset('client/img/linkedin.png') }}" alt="" class="img-fluid" style="width: 25px;
+    height: 25px;">
+                </a>
             </div>
             <div class="col-3">
-              <img src="{{ asset('client/img/icon-facebook.png') }}" alt="" class="img-fluid">
+              <img src="{{ asset('client/img/facebook.png') }}" alt="" class="img-fluid" style="width: 25px;
+    height: 25px;">
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <footer style='background:#b1bfd7ad;margin-top:0'>
-    <p>	&#169; {{ now()->year }} {{ $shop->name_shop }}. All rights reserved.</p>
+<div style="display:flex;align-items:center;justify-content:center;width:100%;background:#b1bfd7ad;" >
+  <footer style='margin-top:0'>
+    <div style="display:flex;gap:10px"><img src="{{ asset('client/img/copyright.png') }}" alt="" class="img-fluid" style="width: 25px;
+    height: 25px;" /><p>	 {{ now()->year }} {{ $shop->name_shop }}. All rights reserved.</p></div>
   </footer>
+
+  </div>

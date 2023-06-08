@@ -1,5 +1,5 @@
 <div class="container py-4">
-    <form action="{{ route('clientCheckoutSave') }}" method="post">
+    <form action="{{ route('clientCheckoutSave') }}" method="post"  style="background:white;border-radius:15px;padding:20px">
         @csrf
         <div class="form-group">
             <label for="name">Name</label>
@@ -24,14 +24,14 @@
         </div>
         <div class="form-group">
             <label for="note">Note</label>
-            <textarea name="note" id="note" cols="30" class="form-control @error('note') is-invalid @enderror bg-transparent" placeholder="Please add more sauce  . . .">{{ old('note') }}</textarea>
+            <textarea name="note" id="note" cols="30" class="form-control @error('note') is-invalid @enderror bg-transparent" placeholder="Write instructions if any...">{{ old('note') }}</textarea>
             @error('note')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
         </div>
-        <button type="submit" class="btn btn-primary float-end">Order</button>
+        <button type="submit" class="btn btn-primary float-end" style="margin-top:2rem">Order</button>
     </form>
 </div>
 @push('js')

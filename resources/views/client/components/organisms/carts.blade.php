@@ -21,7 +21,8 @@
         }
     </style>
 @endpush
-<div class="container py-2">
+<div class="container py-2" style="background: white;
+    border-radius: 15px;">
     <div class="d-lg-block d-sm-block d-none">
         <x-molecules.carts.desktop />
     </div>
