@@ -8,9 +8,11 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Shop;
 use App\Models\Order;
+use App\Models\Payment;
 use App\Models\OrderDetail;
 use Validator;
 use Str;
+use Cartalyst\Stripe\Stripe;
 
 class ClientController extends Controller
 {
@@ -124,12 +126,12 @@ class ClientController extends Controller
             return redirect()->route('clientCheckout')->withErrors($validator)->withInput();
         }else{
             $order_code = Str::random(3).'-'.Date('Ymd');
-
             if(session('cart')){
                 $total = 0;
+                $quantity = 0;
                 foreach((array) session('cart') as $id => $details){
                     $total += $details['price'] * $details['quantity'];
-
+                    $quantity = $details['quantity'];
                     $data[$id] = [
                         'order_code' => $order_code,
                         'title' => $details['title'],
@@ -137,6 +139,18 @@ class ClientController extends Controller
                         'quantity' => $details['quantity'],
                     ];
                 }
+
+                // dd(env('STRIPE_SECRET'));
+                $stripe = Stripe::make(env('STRIPE_SECRET'));
+                $charge = $stripe->charges()->create([
+                    'amount' => $total,
+                    'currency' => 'USD',
+                    'source' => $request->stripeToken,
+                    'description' => 'Order Code '. $order_code ,
+                    'metadata' => [
+                        'quantity' => $quantity,
+                    ],
+                ]);
 
                 Order::create([
                     'shop_id' => Shop::first()->id,
@@ -147,6 +161,13 @@ class ClientController extends Controller
                     'note' => $request->note,
                     'total' => $total,
                     'status' => 0
+                ]);
+
+                Payment::create([
+                    'order_code' => $order_code,
+                    'method' => 'Stripe',
+                    'amount' => $total,
+                    'status' => 'Completed'
                 ]);
 
                 OrderDetail::insert($data);

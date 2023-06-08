@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Payment;
 use App\Models\Product;
 
 class OrderController extends Controller
@@ -23,6 +24,7 @@ class OrderController extends Controller
         $data = [
             'order' => Order::where('order_code', $order_code)->first(),
             'orderDetail' => OrderDetail::where('order_code', $order_code)->get(),
+            'payment' => Payment::where('order_code', $order_code)->first(),
             'title' => 'Order Detail - '.$order_code
         ];
 
