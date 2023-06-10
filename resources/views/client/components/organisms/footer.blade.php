@@ -29,20 +29,20 @@
           <div class="d-lg-block d-md-block d-none">
             <div style="display:flex;align-items:center;gap:10px">
               <div class="col-3">
-                <img src="{{ asset('client/img/instagram.png') }}" alt="" class="img-fluid" style="width: 25px;
-    height: 25px;">
+                <a href="https://github.com/MuhammadUmerQaiser/Eye-Wear-With-Augmented-Reality" target="_blank"><img src="{{ asset('client/img/github.jpeg') }}" alt="" class="img-fluid" style="width: 25px;
+    height: 25px;"></a>
               </div>
               <div class="col-3">
-                <a href="https://www.linkedin.com/company/94871647/admin/?shareMsgArgs=null" target="_blank">
+                <a href="https://www.linkedin.com/company/officialeyewear/about/?viewAsMember=true" target="_blank">
                 <img src="{{ asset('client/img/linkedin.png') }}" alt="" class="img-fluid" style="width: 25px;
     height: 25px;">
                 </a>
  
               </div>
-              <div class="col-3">
+              <!-- <div class="col-3">
                 <img src="{{ asset('client/img/facebook.png') }}" alt="" class="img-fluid" style="width: 25px;
     height: 25px;">
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
