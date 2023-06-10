@@ -10,15 +10,15 @@
         </div>
         <div class="col-lg-3 col-md-3 col-6 ">
           <h6>Company</h6>
-          <a href="/about" class="text-decoration-none"><p>About Us</p></a>
-          <a href="/products" class="text-decoration-none"><p>Product</p></a>
-          <a href="/about#address" class="text-decoration-none text-dark"><p>Address</p></a>
+          <a href="{{route('clientAbout')}}" class="text-decoration-none"><p>About Us</p></a>
+          <a href="{{route('clientProducts')}}" class="text-decoration-none"><p>Product</p></a>
+          <a href="{{route('clientCategory')}}" class="text-decoration-none text-dark"><p>Category</p></a>
         </div>
         <div class="col-lg-3 col-md-3 col-6 ">
           <h6>Support</h6>
-          <a href="/about#faq" class="text-decoration-none text-dark"><p>FAQ</p></a>
-          <a href="/about#shippingandreturns" class="text-decoration-none text-dark"><p>Shipping & Returns</p></a>
-          <a href="/about#warranty" class="text-decoration-none text-dark"><p>Warranty</p></a>
+          <a href="{{route('clientAbout')}}#faq" class="text-decoration-none text-dark"><p>FAQ</p></a>
+          <a href="{{route('clientAbout')}}#shippingandreturns" class="text-decoration-none text-dark"><p>Shipping & Returns</p></a>
+          <a href="{{route('clientAbout')}}#warranty" class="text-decoration-none text-dark"><p>Warranty</p></a>
         </div>
         <div class="col-lg-2 col-md-2 col-6 d-flex flex-column">
           <h6>Contact Us</h6>
