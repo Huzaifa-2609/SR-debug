@@ -6,11 +6,11 @@
                 <h2 class="text-white m-0">{{ $item }}</h2>
             </div>
             <div>
-                <x-molecules.button text="Buy Now" type="light" align="start" size="sm"/>
+                <x-molecules.button text="Buy Now" type="light" align="start" size="sm" link="{{route('clientCategory')}}"/>
             </div>
         </div>
-        <div class="bg-white rounded-3">
+        <!-- <div class="bg-white rounded-3">
             <img src="{{ asset('client/img/'.$image) }}" alt="" class="img-fluid">
-        </div>
+        </div> -->
     </div>
 </div>
