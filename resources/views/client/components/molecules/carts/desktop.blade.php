@@ -59,9 +59,11 @@
                 <strong>Total : $<span class="cart-total">{{ $total }}</span></strong>
             </td>
             @if(!request()->routeIs('clientCheckout'))
-                <td>
-                    <a href="{{ url('/checkout') }}" class="btn btn-primary">CheckOut</a>
-                </td>
+                @if(session('cart'))
+                    <td>
+                        <a href="{{ url('/checkout') }}" class="btn btn-primary">CheckOut</a>
+                    </td>
+                @endif
             @endif
         </tr>
     </tfoot>

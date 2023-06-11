@@ -19,6 +19,35 @@
     
 }
 
+.w3l-bannerhny-content {
+    position: relative;
+}
+
+.video-container {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (adjust as needed) */
+    overflow: hidden;
+}
+
+.back-video {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.w3l-bannerhny-info {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
 @media screen and (max-width: 767px) {
     .text-block-hero h1,
     .text-block-hero p {
