@@ -9,13 +9,14 @@
 <div class="w3l-main-slider position-relative" id="home">
     <div class="w3l-bannerhny-content">
         <div class="container">
-            <div class="w3l-bannerhny-info">
-                <h3 class="mb-md-5 mb-4" id="animation1" style="color: white;">
-                    We change the way you see the world
-                </h3>
-                <h3 class="mb-md-5 mb-4" id="animation2" style="color: white;">
+            <div class="w3l-bannerhny-info text-block-hero py-5 mb-5">
+                <h1 style="color: white;">
+                    We change the way
+                </h1>
+                <h1 style="color: white;">you see the world</h1>
+                <p style="color: white;">
                     Experience eyewear like never before with our cutting-edge augmented reality technology. Try on our stylish frames virtually, right from the comfort of your own home. Discover the perfect pair that suits your unique style and see it come to life before your eyes.
-                </h3>
+                </p>
             </div>
         </div>
         <div class="video-container">
