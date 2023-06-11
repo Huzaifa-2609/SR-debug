@@ -38,6 +38,7 @@ Route::controller(ClientController::class)->group(function(){
     Route::get('/check-order', 'checkOrder')->name('clientCheckOrder');
     Route::post('/check-order-status', 'checkOrderStatus')->name('clientCheckOrderStatus');
     Route::get('/about', 'about')->name('clientAbout');
+    Route::get('/ar-view', 'arView')->name('clientArView');
 });
 
 Route::controller(CartController::class)->group(function(){

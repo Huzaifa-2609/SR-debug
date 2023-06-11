@@ -232,4 +232,8 @@ class ClientController extends Controller
 
         return view('client.about', $data);
     }
+
+    public function arView(){
+        return view('client.arView');
+    }
 }

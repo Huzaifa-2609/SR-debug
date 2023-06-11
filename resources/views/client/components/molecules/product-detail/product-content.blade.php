@@ -40,6 +40,7 @@
         <input type="button" value="+" id="plus" data-stok="{{$dataProductContent->stock}}" onclick="plus()" class="btn btn-outline-primary">
     </div>
     <button class="btn btn-primary btn-small font-secondary mt-4 add-to-cart" data-id-product="{{$dataProductContent->id}}" data-quantity="1">Add to cart</button>
+    <a href="{{route('clientArView')}}" class="btn btn-primary btn-small font-secondary mt-4">AR View</a>
     @endif
 </div>
 @push('js')
