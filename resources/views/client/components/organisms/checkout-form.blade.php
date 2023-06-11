@@ -1,5 +1,5 @@
 <div class="container py-4">
-    <form action="{{ route('clientCheckoutSave') }}" method="post" class="require-validation" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"  style="background:white;border-radius:15px;padding:20px"> >
+    <form action="{{ route('clientCheckoutSave') }}" method="post" class="require-validation" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"  style="background:white;border-radius:15px;padding:20px">
         @csrf
         <div class="form-group">
             <label for="name">Name</label>
