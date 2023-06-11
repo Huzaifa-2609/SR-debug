@@ -70,7 +70,7 @@ class ClientController extends Controller
         $data = [
             'shop' => Shop::first(),
             'category' => Category::orderBy('id', 'DESC')->paginate(12),
-            'title' => 'Products'
+            'title' => 'Category'
         ];
 
         return view('client.category', $data);
