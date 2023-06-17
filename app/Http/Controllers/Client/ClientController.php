@@ -127,8 +127,10 @@ class ClientController extends Controller
         }else{
             $order_code = Str::random(3).'-'.Date('Ymd');
             if(session('cart')){
+                $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
                 $total = 0;
                 $quantity = 0;
+                $lineItems = [];
                 foreach((array) session('cart') as $id => $details){
                     $total += $details['price'] * $details['quantity'];
                     $quantity = $details['quantity'];
@@ -138,19 +140,18 @@ class ClientController extends Controller
                         'price' => $details['price'],
                         'quantity' => $details['quantity'],
                     ];
-                }
 
-                // dd(env('STRIPE_SECRET'));
-                $stripe = Stripe::make(env('STRIPE_SECRET'));
-                $charge = $stripe->charges()->create([
-                    'amount' => $total,
-                    'currency' => 'USD',
-                    'source' => $request->stripeToken,
-                    'description' => 'Order Code '. $order_code ,
-                    'metadata' => [
-                        'quantity' => $quantity,
-                    ],
-                ]);
+                    $lineItems[] =    [
+                        'price_data' => [
+                            'currency' => 'usd',
+                            'product_data' => [
+                              'name' => $details['title'],
+                            ],
+                            'unit_amount' => $details['price'] * 100,
+                          ],
+                          'quantity' => $details['quantity'],
+                    ];
+                }
 
                 Order::create([
                     'shop_id' => Shop::first()->id,
@@ -174,7 +175,14 @@ class ClientController extends Controller
 
                 session()->forget('cart');
 
-                return redirect()->route('clientOrderCode', $order_code);
+                $checkout_session = $stripe->checkout->sessions->create([
+                    'line_items' => $lineItems,
+                    'mode' => 'payment',
+                    'success_url' => route('clientOrderCode', $order_code),
+                    'cancel_url' => 'http://localhost:4242/cancel',
+                  ]);
+
+                return redirect($checkout_session->url);
             }
 
         }
