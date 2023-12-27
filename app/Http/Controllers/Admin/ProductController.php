@@ -12,6 +12,7 @@ use File;
 
 class ProductController extends Controller
 {
+    const REQUIRED_INTEGER = 'required|integer';
     public function index(){
         $data = [
             'products' => Product::all()->sortByDesc('id'),
@@ -38,8 +39,8 @@ class ProductController extends Controller
         $validator = Validator($request->all(), [
             'category' => 'required',
             'title' => 'required|unique:products',
-            'price' => 'required|integer',
-            'stock' => 'required|integer',
+            'price' =>  self::REQUIRED_INTEGER,
+            'stock' => self::REQUIRED_INTEGER,
             'desc' => 'required',
         ]);
 
@@ -121,13 +122,14 @@ class ProductController extends Controller
         $validator = Validator($request->all(), [
             'category' => 'required',
             'title' => 'required|'.$validatorCheck,
-            'price' => 'required|integer',
-            'stock' => 'required|integer',
+            'price' =>  self::REQUIRED_INTEGER,
+            'stock' =>  self::REQUIRED_INTEGER,
             'desc' => 'required',
         ]);
 
         if($validator->fails()){
-            return redirect()->route('productEdit', ['product' => $product, 'id' => $id])->withErrors($validator)->withInput();
+            return redirect()->route('productEdit', ['product' => 
+            $product, 'id' => $id])->withErrors($validator)->withInput();
         }else{
             Product::where('id', $id)->update([
                 'category_id' => $request->category,

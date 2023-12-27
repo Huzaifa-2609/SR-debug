@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html> 
+<html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>

@@ -5,6 +5,7 @@
 @section('content')
 <div class="card">
   <div class="card-body">
+  <p><strong>Orders Overview</strong> - Below is a summary of all orders:</p>
         <table class="table table-striped" id="table1">
             <thead>
                 <tr>

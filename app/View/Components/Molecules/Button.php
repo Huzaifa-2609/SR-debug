@@ -6,16 +6,23 @@ use Illuminate\View\Component;
 
 class Button extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+    public $text;
+    public $arrow;
+    public $type;
+    public $icon;
+    public $align;
+    public $size;
+    public $link;
 
-     public $text, $arrow, $type, $icon, $align, $size, $link;
-
-    public function __construct($text = null, $arrow = false, $type = null, $icon = null, $align = null, $size = null, $link = null)
-    {
+    public function __construct(
+        $text = null,
+        $arrow = false,
+        $type = null,
+        $icon = null,
+        $align = null,
+        $size = null,
+        $link = null
+    ) {
         $this->text = $text;
         $this->arrow = $arrow;
         $this->type = $type ?? "primary";
@@ -25,11 +32,6 @@ class Button extends Component
         $this->link = $link;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
     public function render()
     {
         return view('client.components.molecules.button');

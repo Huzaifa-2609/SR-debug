@@ -11,7 +11,7 @@
             @foreach($dataProductimages as $row)
               <div class="swiper-slide easyzoom easyzoom--overlay">
                 <a href="{{ asset('shop/products/'.$row->path)}}">
-                  <img src="{{ asset('shop/products/'.$row->path)}}">
+                  <img src="{{ asset('shop/products/'.$row->path)}}" alt="product image">
                 </a>
               </div>
             @endforeach
@@ -25,7 +25,7 @@
           <div class="swiper-wrapper">
             @foreach($dataProductimages as $row)
               <div class="swiper-slide">
-                <img src="{{ asset('shop/products/'.$row->path)}}">
+                <img src="{{ asset('shop/products/'.$row->path)}}" alt="product image">
               </div>
             @endforeach
           </div>

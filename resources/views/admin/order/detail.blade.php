@@ -13,9 +13,9 @@
         <div class="col-md-4 col-12">
           <table class="order-info">
             <tr>
-              <td><b>Status</b></td>
-              <td>&nbsp; : &nbsp;</td>
-              <td>
+              <th><b>Status</b></th>
+              <th>&nbsp; : &nbsp;</th>
+              <th>
                 <button type="button" data-bs-toggle="modal" data-bs-target="#modalUpdateStatus" style="background-color:transparent;border:none;">
                   @if($order->status == 0)
                     <span class="badge bg-warning" >Unprocessed</span>
@@ -31,7 +31,7 @@
                     <span class="badge bg-success">Completed</span>
                   @endif
                 </button>
-              </td>
+              </th>
             </tr>
             <tr>
               <td><b>Total</b></td>
@@ -66,11 +66,10 @@
             <table class="table table table-striped table-bordered">
               <thead>
                 <tr>
-                  <td>No</td>
-                  <td>Title</td>
-                  <td>Price</td>
-                  <td>Quantity</td>
-                  <td>Sub Total</td>
+                <th>No</th>
+                <th>Method</th>
+                <th>Amount</th>
+                <th>Status</th>
                 </tr>
               </thead>
               <tbody>

@@ -6,13 +6,10 @@ use Illuminate\View\Component;
 
 class ProductCard extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-
-     public $image, $category, $title, $price;
+    public $image;
+    public $category;
+    public $title;
+    public $price;
 
     public function __construct($image, $category, $title, $price)
     {
@@ -22,11 +19,6 @@ class ProductCard extends Component
         $this->price = $price;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
     public function render()
     {
         return view('client.components.molecules.product-card');

@@ -1,7 +1,7 @@
 <x-template.layout title="{{ $title }}" >
   <x-organisms.navbar :path="$shop->path"/>
     <div class="container py-y d-flex flex-column align-items-center gap-3">
-      <img src="{{ asset('client/img/success-order.png') }}" class="border rounded rounded-3" style="width:40%;height:auto;margin-top:20px">
+      <img src="{{ asset('client/img/success-order.png') }}" class="border rounded rounded-3" style="width:40%;height:auto;margin-top:20px" alt="order success logo">
       <div class="text-center">
         <h4>Thank you so much for your order</h4>
         <p>Order Code : <u><b class="text-danger">{{ $order_code }}</b></u></p>

@@ -6,13 +6,9 @@ use Illuminate\View\Component;
 
 class CategoryCard extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-
-     public $path, $name, $width;
+    public $path;
+    public $name;
+    public $width;
 
     public function __construct($path, $name, $width = null)
     {
@@ -21,11 +17,6 @@ class CategoryCard extends Component
         $this->width = $width ?? "100%";
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
     public function render()
     {
         return view('client.components.molecules.category-card');

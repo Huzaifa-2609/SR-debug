@@ -106,9 +106,13 @@ class ShopController extends Controller
             'password' => 'required|string|confirmed',
         ]);
 
-        if($validator->fails()){
-            return redirect()->route('home')->with('failed', 'Failed to update password')->withErrors($validator)->withInput();
-        }else{
+        if ($validator->fails()) {
+            return redirect()->route('home')
+                ->with('failed', 'Failed to update password')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        else{
 
             User::where('id', Auth::user()->id)->update([
                 'password' => Hash::make($request->password),

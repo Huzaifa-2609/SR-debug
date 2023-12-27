@@ -26,13 +26,23 @@ class CartController extends Controller
         if(isset($cart[$id])) {
             $quantityUpdate = $cart[$id]["quantity"] + $request->quantity;
 
-            if($quantityUpdate > $product->stock){
-                return response()->json(['status' => 'failed','cartCount' => count((array) session('cart')), 'code' => 202], 202);
+            if ($quantityUpdate > $product->stock) {
+                return response()->json([
+                    'status' => 'failed',
+                    'cartCount' => count((array) session('cart')),
+                    'code' => 202
+                ], 202);
             }
+            
 
             $cart[$id]["quantity"] = $quantityUpdate;
             session()->put('cart', $cart);
-            return response()->json(['status' => 'success','cartCount' => count((array) session('cart')), 'code' => 201], 201);
+            return response()->json([
+                'status' => 'success',
+                'cartCount' => count((array) session('cart')),
+                'code' => 201
+            ],
+            201);
         }
 
         $cart[$id] = [
@@ -45,12 +55,17 @@ class CartController extends Controller
 
         session()->put('cart', $cart);
 
-        return response()->json(['status' => 'success', 'cartCount' => count((array) session('cart')), 'code' => 200], 200);
+        return response()->json([
+            'status' => 'success',
+            'cartCount' => count((array) session('cart')),
+            'code' => 200
+        ], 200);
+        
     }
 
     public function updateCart(Request $request)
     {
-        if($request->product_id and $request->quantity){
+        if($request->product_id && $request->quantity){
             $cart = session()->get('cart');
             $cart[$request->product_id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
@@ -79,7 +94,12 @@ class CartController extends Controller
                 $total += $details['price'] * $details['quantity'];
             }
 
-            return response()->json(['message' => 'Success', 'total' => $total, 'cartCount' => count((array) session('cart'))]);
+            return response()->json([
+                'message' => 'Success',
+                'total' => $total,
+                'cartCount' => count((array) session('cart'))
+            ]);
+            
         }
     }
 }

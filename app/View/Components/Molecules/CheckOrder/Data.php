@@ -12,7 +12,7 @@ class Data extends Component
      * @return void
      */
 
-     public $order, $orderDetail;
+    public $order, $orderDetail;
 
     public function __construct($order, $orderDetail)
     {

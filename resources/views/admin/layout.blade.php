@@ -29,7 +29,7 @@
                     <div class="d-flex justify-content-center">
                         <div class="logo shadow rounded">
                             <a href="{{ route('home') }}">
-                                <img src='{{ asset("shop/".Auth::user()->shop->path."") }}' alt="Logo" srcset="" style="height:100px;" class="rounded">
+                                <img src='{{ asset("shop/".Auth::user()->shop->path."") }}' alt="shop Logo" srcset="" style="height:100px;" class="rounded">
                             </a>
                         </div>
                         <div class="toggler">

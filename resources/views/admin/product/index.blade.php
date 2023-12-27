@@ -8,6 +8,8 @@
 @section('content')
 <div class="card">
   <div class="card-body">
+  <p><strong>Products Overview</strong> - This table displays a summary of available products:</p>
+
         <table class="table table-striped" id="table1">
             <thead>
                 <tr>
