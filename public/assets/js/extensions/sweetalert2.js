@@ -1,95 +1,59 @@
-document.getElementById("basic").addEventListener("click", (e) => {
-    Swal.fire("Any fool can use a computer");
-});
+const showAlert = (config) => {
+    Swal.fire(config);
+};
 
-document.getElementById("footer").addEventListener("click", (e) => {
-    Swal.fire({
+const addEventListenerToId = (id, configCallback) => {
+    document.getElementById(id).addEventListener("click", configCallback);
+};
+
+// Configurations for Swal.fire
+const configurations = {
+    basic: "Any fool can use a computer",
+    footer: {
         icon: "error",
         title: "Oops...",
         text: "Something went wrong!",
         footer: "<a href>Why do I have this issue?</a>",
-    });
-});
-
-document.getElementById("title").addEventListener("click", (e) => {
-    Swal.fire("The Internet?", "That thing is still around?", "question");
-});
-
-document.getElementById("success").addEventListener("click", (e) => {
-    Swal.fire({
+    },
+    title: "The Internet?",
+    success: {
         icon: "success",
         title: "Success",
-    });
-});
-
-document.getElementById("error").addEventListener("click", (e) => {
-    Swal.fire({
+    },
+    error: {
         icon: "error",
         title: "Error",
-    });
-});
-
-document.getElementById("warning").addEventListener("click", (e) => {
-    Swal.fire({
+    },
+    warning: {
         icon: "warning",
         title: "Warning",
-    });
-});
-
-document.getElementById("info").addEventListener("click", (e) => {
-    Swal.fire({
+    },
+    info: {
         icon: "info",
         title: "Info",
-    });
-});
-
-document.getElementById("question").addEventListener("click", (e) => {
-    Swal.fire({
+    },
+    question: {
         icon: "question",
         title: "Question",
-    });
-});
-
-document.getElementById("text").addEventListener("click", () => {
-    Swal.fire({
+    },
+    text: {
         title: "Enter your IP address",
         input: "text",
         inputLabel: "Your IP address",
         showCancelButton: true,
-    }).then((result) => {
-        if (result.value) {
-            Swal.fire(`Entered IP address: ${result.value}`);
-        }
-    });
-});
-
-document.getElementById("email").addEventListener("click", async () => {
-    const { value: email } = await Swal.fire({
+    },
+    email: {
         title: "Input email address",
         input: "email",
         inputLabel: "Your email address",
         inputPlaceholder: "Enter your email address",
-    });
-
-    if (email) {
-        Swal.fire(`Entered email: ${email}`);
-    }
-});
-
-document.getElementById("url").addEventListener("click", async () => {
-    const { value: url } = await Swal.fire({
+    },
+    url: {
         input: "url",
         inputLabel: "URL address",
         inputPlaceholder: "Enter the URL",
-    });
-
-    if (url) {
-        Swal.fire(`Entered URL: ${url}`);
-    }
-});
-
-document.getElementById("password").addEventListener("click", async () => {
-    const { value: password } = await Swal.fire({
+    },
+    password: {
         title: "Enter your password",
         input: "password",
         inputLabel: "Password",
@@ -99,15 +63,8 @@ document.getElementById("password").addEventListener("click", async () => {
             autocapitalize: "off",
             autocorrect: "off",
         },
-    });
-
-    if (password) {
-        Swal.fire(`Entered password: ${password}`);
-    }
-});
-
-document.getElementById("textarea").addEventListener("click", async () => {
-    const { value: text } = await Swal.fire({
+    },
+    textarea: {
         input: "textarea",
         inputLabel: "Message",
         inputPlaceholder: "Type your message here...",
@@ -115,15 +72,8 @@ document.getElementById("textarea").addEventListener("click", async () => {
             "aria-label": "Type your message here",
         },
         showCancelButton: true,
-    });
-
-    if (text) {
-        Swal.fire(text);
-    }
-});
-
-document.getElementById("select").addEventListener("click", async () => {
-    const { value: fruit } = await Swal.fire({
+    },
+    select: {
         title: "Select field validation",
         input: "select",
         inputOptions: {
@@ -151,9 +101,15 @@ document.getElementById("select").addEventListener("click", async () => {
                 }
             });
         },
-    });
+    },
+};
 
-    if (fruit) {
-        Swal.fire(`You selected: ${fruit}`);
-    }
-});
+// Add event listeners using configurations
+for (const [id, config] of Object.entries(configurations)) {
+    addEventListenerToId(id, async () => {
+        const { value } = await Swal.fire(config);
+        if (value) {
+            showAlert(`Entered ${id}: ${value}`);
+        }
+    });
+}

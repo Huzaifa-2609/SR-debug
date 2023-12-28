@@ -29,6 +29,6 @@ class BroadcastServiceProvider extends ServiceProvider
      */
     protected function loadChannels($path)
     {
-        require $path;
+        require_once $path;
     }
 }
